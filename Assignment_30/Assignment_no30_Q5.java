@@ -10,13 +10,13 @@ class Pattern
         {
             for(j=1;j<=iCol;j++)
             {
-                if(j <= ((iCol+1)-i))
+                if(i==1 || j==1 || j==iCol || i==iRow )
                 {
-                    System.out.print("*\t");
+                    System.out.print(j+"\t");
                 }
                 else
                 {
-                    System.out.printf("#\t");
+                    System.out.printf("*\t");
                 }
                 
             }    
@@ -25,7 +25,7 @@ class Pattern
 
     }
 }
-class Assignment_no30_Q2
+class Assignment_no30_Q5
 {
     public static void main(String A[]) {
         int iValue1=0,iValue2=0;
