@@ -26,17 +26,23 @@ void InsertFirst(PPNODE Head,int no)
     }
     else
     {
-        newn->Next =* Head;
+        newn->Next = *Head;
         *Head =newn;
     }
 }
 int SearchFirstOcc(PNODE Head,int no)
 {
-    if(Head->Data == no)
+    int pos=1;
+    while(Head!=NULL)
     {
-        return Head;
+        if(Head->Data == no)
+        {
+            return pos;
+        }
+        Head=Head->Next;
+        pos++;
     }
-    Head=Head->Next;
+    return -1;
 }
 int main()
 {
@@ -51,6 +57,13 @@ int main()
     InsertFirst(&First,70);
 
    iRet= SearchFirstOcc(First,30);
-   printf("position :%d",iRet);
+   if(iRet == -1)
+   {
+    printf("element not found\n");
+   }
+   else
+   {
+   printf("element found at position :%d\n",iRet);
+   }
     return 0;
 }
